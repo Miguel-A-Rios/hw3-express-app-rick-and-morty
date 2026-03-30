@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/header.ejs") %>
+
+</head>
+<body>
+    <h2>Search for a Location</h2>
+
+<form method="POST" action="/searchlocation">
+  <input type="text" name="name" placeholder="Enter location name" required>
+  <button type="submit">Search</button>
+</form>
+
+<% if (location) { %>
+    <div class="location-info">
+      <h3><%= location.name %></h3>
+      <p>Type: <%= location.type %></p>
+      <p>Dimension: <%= location.dimension %></p>
+    </div>
+  
+    <h3>Residents:</h3>
+    <% if (residents.length > 0) { %>
+      <div class="grid">
+        <% residents.forEach(r => { %>
+          <div class="card">
+            <img src="<%= r.image %>" alt="<%= r.name %>" class="image" >
+
+            <h3>Name: <%= r.name %></h3>
+            <p>Status: <%= r.status %></p>
+            <p>Species: <%= r.species %></p>
+            <p>Type: <%= r.type || "N/A" %></p>
+            <p>Gender: <%= r.gender %></p>
+            <p>Origin: <%= r.origin.name %></p>
+            <p>Location: <%= r.location.name %></p>
+            <p>Episodes: <%= r.episode.length %></p>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p>No known residents found for this location.</p>
+    <% } %>
+  <% } %>
+  
+  <%- include("partials/footer.ejs") %>
+    
+</body>
+</html>

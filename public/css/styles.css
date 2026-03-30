@@ -1,0 +1,41 @@
+.image{
+    width: 45%;
+    height: 45%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+body, .card{
+    text-align: center;
+    background-image: url("https://images.alphacoders.com/876/thumb-1920-876589.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 1.25em;
+    
+}
+.card{
+    /* text-align: center; */
+    color: white;
+}
+h1, h2, h3{
+    text-align: center;
+    color: white;
+}
+footer{
+    text-align: center;
+    color: white;
+}
+button{
+background-color: lightgray;
+color: black;
+border: 5px solid black;
+}
+button:hover {
+    background-color: gray;
+    color: white;
+    box-shadow: 0 0 15px lightgrey;
+    transition: .9s;
+}

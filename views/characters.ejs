@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/header.ejs") %>
+</head>
+<body>
+    <h2 class="text-center"> Rick and Morty Characters</h2>
+    <div class="grid">
+        
+        <% characters.forEach(c=> { %>
+            <div class="card">
+                <img src="<%= c.image %>" alt="<%= c.name %>" class="image" >
+                <h3>Name: <%= c.name %></h3>
+                <p>Status: <%= c.status %></p>
+                <p>Species: <%= c.species %></p>
+                <p>Type: <%= c.type || "N/A" %></p>
+                <p> Gender: <%= c.gender%></p>
+                <p>Origin: <%= c.origin.name %></p>
+                <p>Location: <%= c.location.name %></p>
+                <p>Episodes: <%= c.episode.length %></p>
+
+            </div>
+            <% }) %>
+    </div>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
