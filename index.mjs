@@ -57,9 +57,9 @@ app.get('/characters', async (req, res) => {
 
    } catch (err) {
       if (err instanceof TypeError) {
-         alert("Error accessing API endpoint (network failure)");
+         console.log("Error accessing API endpoint (network failure)");
       } else {
-         alert(err.message);
+         console.log(err.message);
       }
    } //catch
 });
